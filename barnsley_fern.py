@@ -9,23 +9,15 @@ actions = {
     "-": LTurtle.RIGHT,
     "[": LTurtle.SAVE_POSITION,
     "]": LTurtle.POP_POSITION,
-    "X": LTurtle.PASS
+    "X": LTurtle.PASS,
 }
 
-system = System(
-    axiom=axiom,
-    rules=rules
-)
+system = System(axiom=axiom, rules=rules)
 
 HEIGHT = 1000.0
 WIDTH = 1500.0
 
 lturtle = LTurtle(WIDTH, HEIGHT)
 lturtle.set_actions(actions)
-lturtle.draw_axiom(
-    system.advance(6)
-)
+lturtle.draw_axiom(system.advance(6))
 lturtle.screen.mainloop()
-
-
-

@@ -5,10 +5,7 @@ def test_algae():
     axiom = "A"
     rules = {"A": "AB", "B": "A"}
 
-    system = System(
-        axiom=axiom,
-        rules=rules
-    )
+    system = System(axiom=axiom, rules=rules)
 
     assert system.advance(0) == "A"
     assert system.advance(1) == "AB"
@@ -25,11 +22,7 @@ def test_binary_tree():
     rules = {"1": "11", "0": "1[0]0"}
     constants = {"[", "]"}
 
-    system = System(
-        axiom=axiom,
-        rules=rules,
-        constants=constants
-    )
+    system = System(axiom=axiom, rules=rules, constants=constants)
 
     assert system.advance(0) == "0"
     assert system.advance(1) == "1[0]0"
@@ -57,13 +50,8 @@ def test_koch_curve():
     rules = {"F": "F+F-F-F+F"}
     constants = {"+", "-"}
 
-    system = System(
-        axiom=axiom,
-        rules=rules,
-        constants=constants
-    )
+    system = System(axiom=axiom, rules=rules, constants=constants)
 
     assert system.advance(0) == "F"
     assert system.advance(1) == "F+F-F-F+F"
     assert system.advance(2) == "F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F"
-

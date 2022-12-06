@@ -1,9 +1,5 @@
 import turtle
 from enum import Enum
-#
-#
-
-
 
 
 class LTurtle(turtle.Turtle):
@@ -46,7 +42,9 @@ class LTurtle(turtle.Turtle):
                 case LTurtle.RIGHT:
                     self.right(10)
                 case LTurtle.SAVE_POSITION:
-                    self.saved_positions.append([turtle.xcor(), turtle.ycor(), turtle.heading()])
+                    self.saved_positions.append(
+                        [turtle.xcor(), turtle.ycor(), turtle.heading()]
+                    )
                 case LTurtle.POP_POSITION:
                     self.penup()
                     last_position = self.saved_positions.pop(-1)
@@ -58,7 +56,3 @@ class LTurtle(turtle.Turtle):
                     pass
                 case _:
                     raise Exception(f"Unknown action {action}")
-
-
-
-
